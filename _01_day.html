@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 1</title>
+  </head>
+  <body>
+    <h1>Day 1</h1>
+    <ol>
+      <li>Reverse an Array</li>
+      <li>Reverse a String</li>
+      <li>Check 2 arrays if equal</li>
+    </ol>
+    <script type="text/javascript">
+      /********************
+       * REVERSE AN ARRAY *
+       ********************/
+      //function which accepts an array and reverse it
+      function reverseTheArray(arr) {
+        let lengthOfArr = arr.length;
+        let reverseOfArr = "";
+
+        for (let i = lengthOfArr - 1; i >= 0; i--) {
+          reverseOfArr += arr[i];
+          //check if the index is zero to remove comma at the end of reverse string
+          if (i !== 0) {
+            reverseOfArr += ",";
+          }
+        }
+
+        reverseOfArr = "{" + reverseOfArr + "}";
+        return reverseOfArr;
+      }
+      //variable declaration
+      let A = [0, 1, 2, 3, 4, 5];
+      let B = [5, 4, 3, 2, 1, 0];
+      //output
+      console.log(
+        `REVERSE OF ARRAY A = [0, 1, 2, 3, 4, 5] --> B[] = ${reverseTheArray(
+          A
+        )}`
+      );
+      /********************
+       * REVERSE A STRING *
+       ********************/
+      function reverseTheString(str) {
+        let lengthOfStr = str.length;
+        let reverseOfStr = "";
+
+        for (let i = lengthOfStr - 1; i >= 0; i--) {
+          reverseOfStr += str[i];
+        }
+
+        return reverseOfStr;
+      }
+      let s = "abc";
+      console.log(
+        `REVERSE OF STRING s = abc --> string new = "${reverseTheString(s)}"`
+      );
+      /*************************
+       * CHECK ARRAY EQUALITY *
+       *************************/
+      let A1 = [1, 2, 5, 4, 0];
+      let B1 = [1, 2, 5, 4, 0];
+
+      function check_array_equality(A1, B1) {
+        let lengthOfA1 = A1.length;
+        let lengthOfB1 = B1.length;
+        let l = 0;
+        if (lengthOfA1 === lengthOfB1) {
+          for (var i = 0; i < lengthOfA1; ++i) {
+            if (A1[i] == B1[i]) {
+              l++;
+            }
+          }
+          if (l == lengthOfA1) {
+            return true;
+          } else {
+            return false;
+          }
+        } else {
+          return false;
+        }
+      }
+
+      console.log(
+        `A1[] = {1,2,5,4,0} and B1[] = {1,2,5,4,0}. Are they equal? Output: ${check_array_equality(
+          A1,
+          B1
+        )}`
+      );
+    </script>
+  </body>
+</html>

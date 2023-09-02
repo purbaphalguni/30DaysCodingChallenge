@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2</title>
+  </head>
+  <body>
+    <h1>Day 1</h1>
+    <ol>
+      <li>Find the maximum in an array.</li>
+      <li>Find the minimum in an array</li>
+    </ol>
+    <script type="text/javascript">
+      /************************
+       * MAXIMUM IN AN ARRAY *
+       ************************/
+
+      //variable declaration
+      let A = [0, 1, 2, 3, 4, 5];
+      let B = [5, 4, 3, 2, 1, 0];
+      
+
+      function findMaximumOfArray(arr) {
+        let lengthOfArr = arr.length;
+        let max = arr[0];
+        for (let j = 0; j < lengthOfArr; j++) {
+          if (arr[j] > max) {
+            max = arr[j];
+          } else {
+            //do nothing
+          }          
+        }
+        return max;
+      }
+
+      function findMinimumOfArray(arr) {
+        let lengthOfArr = arr.length;
+        let min = arr[0];
+        for (let j = 0; j < lengthOfArr; j++) {
+          if (arr[j] < min) {
+            min = arr[j];
+          } else {
+            //do nothing
+          }          
+        }
+        return min;
+      }
+
+      console.log("Maximum Number of the array = A = [0, 1, 2, 3, 4, 5] -->" + findMaximumOfArray(A));
+      console.log("Maximum Number of the array = B = [5, 4, 3, 2, 1, 0] -->" + findMaximumOfArray(B));
+      console.log("Minimum Number of the array = A = [0, 1, 2, 3, 4, 5] -->" + findMinimumOfArray(A));
+      console.log("Minimum Number of the array = B = [5, 4, 3, 2, 1, 0] -->" + findMinimumOfArray(B));
+    </script>
+  </body>
+</html>
