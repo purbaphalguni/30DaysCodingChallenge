@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 Test</title>
+  </head>
+  <body>
+    <h1>Day 3 Test</h1>
+    <ol>
+      <li>FDuplicate in an array.</li>
+      <li>Occurrence of key in an array</li>
+      <li>Find if two arrays are equal</li>
+    </ol>
+    <script type="text/javascript">
+      /************************
+       * #Day 3:
+        Duplicate in array 
+        Occurrence of key in an array 
+        Find if two arrays are equal  *
+       ************************/
+
+      //variable declaration
+      let A = [0, 1, 2, 3, 2, 5];
+      let B = [0, 1, 2, 3, 2, 5];
+      let C = [0, 0, 2, 3, 2, 5];
+      let value = 5;
+
+      function findDuplicateValueInAnArray(arr) {
+        let lengthOfArr = arr.length;
+        let duplicate = 0;
+        for (let i = 0; i < lengthOfArr; i++) {
+          for (let j = i; j < lengthOfArr - 1; j++) {
+            if (arr[i] == arr[j]) {
+              duplicate = arr[i];
+              break;
+            }
+          }
+        }
+        return duplicate;
+      }
+
+      function findOccurrenceOfKeyInAnArray(arr, value) {
+        let lengthOfArr = arr.length;
+        let key = 0;
+        for (let i = 0; i < lengthOfArr; i++) {
+          if (arr[i] == value) {
+            key = i;
+            break;
+          }
+        }
+        return key;
+      }
+
+      function arrayEquality(arr1, arr2) {
+        let lengthOfArr1 = arr1.length;
+        let lengthOfArr2 = arr2.length;
+        let count = 0;
+        let status = false;
+        if (lengthOfArr1 == lengthOfArr2) {
+          for (let i = 0; i < lengthOfArr1; i++) {
+            if (arr1[i] === arr2[i]) {
+              count++;
+            } else {
+              //do nothing
+            }
+          }
+        }else{
+          status = false;
+        }
+        if(count==0){
+          status = false;
+        }else{
+          if(count==lengthOfArr1){
+            status = true;
+          }else{
+            status = false;
+          }
+        }
+        return status;
+      }
+
+      let answer = findDuplicateValueInAnArray(A);
+      if (answer != 0) {
+        console.log(
+          "Duplicate Number in an array = A = [0, 1, 2, 3, 2, 5] -->" +
+            findDuplicateValueInAnArray(A)
+        );
+      } else {
+        console.log(
+          "Duplicate Number does not exist in an array = A = [0, 1, 2, 3, 2, 5]"
+        );
+      }
+
+      answer = findOccurrenceOfKeyInAnArray(A, value);
+      if (answer != 0) {
+        console.log(
+          "The key of number " +
+            value +
+            " in an array = A = [0, 1, 2, 3, 2, 5] -->" +
+            findOccurrenceOfKeyInAnArray(A, value)
+        );
+      } else {
+        console.log(
+          value + " does not exist in an array = A = [0, 1, 2, 3, 2, 5]"
+        );
+      }
+
+      answer = arrayEquality(A, B);
+      if (answer == true) {
+        console.log(
+          "Arrays A = [0, 1, 2, 3, 2, 5] and B = [0, 1, 2, 3, 2, 5] are equal!"
+        );
+      } else {
+        console.log(
+          "Arrays A = [0, 1, 2, 3, 2, 5] and B = [0, 1, 2, 3, 2, 5] are not equal!"
+        );
+      }
+
+      answer = arrayEquality(A, C);
+      if (answer == true) {
+        console.log(
+          "Arrays A = [0, 1, 2, 3, 2, 5] and C = [0, 0, 2, 3, 2, 5] are equal!"
+        );
+      } else {
+        console.log(
+          "Arrays A = [0, 1, 2, 3, 2, 5] C = [0, 0, 2, 3, 2, 5] are not equal!"
+        );
+      }
+    </script>
+  </body>
+</html>
